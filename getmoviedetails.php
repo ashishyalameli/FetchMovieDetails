@@ -1,3 +1,4 @@
+<?php
 <html>
 	<head>
 		<title>Get Movie Details</title>
@@ -115,3 +116,4 @@
 		</div>
 	</body>
 </html>
+?>
