@@ -46,16 +46,16 @@
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
-			function load(){
+			/*function load(){
 				document.getElementById("formdiv").style.display = "block";
 				document.getElementById("con").style.display = "none";
 				document.getElementById("container").style.display = "none";
-			}
+			}*/
 			
 			function movieDetails(){
-				document.getElementById("formdiv").style.display = "none";
+				/*document.getElementById("formdiv").style.display = "none";
 				document.getElementById("con").style.display = "block";
-				document.getElementById("container").style.display = "block";
+				document.getElementById("container").style.display = "block";*/
 				
 				var name = document.getElementById("mname").value;
 				document.getElementById("container").innerHTML = "";
@@ -87,12 +87,6 @@
 					}
 				});
 			}
-			
-			function reload(){
-				document.getElementById("formdiv").style.display = "block";
-				document.getElementById("con").style.display = "none";
-				document.getElementById("container").style.display = "none";
-			}
 		</script>
 	</head>
 	<body onload="load()" align="center">
@@ -110,7 +104,7 @@
 		<div id="con" name="con">
 			<div align="left" id="container">
 			</div>
-			<input type="button" value="Back" onclick="reload()" />
+			<!-- <input type="button" value="Back" onclick="reload()" /> -->
 		</div>
 	</body>
 </html>
