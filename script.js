@@ -10,6 +10,7 @@ function load(){
 				document.getElementById("container").style.display = "block";
 				
 				var name = document.getElementById("mname").value;
+				document.getElementById("mname").value = "";
 				document.getElementById("container").innerHTML = "";
 				$.getJSON("https://www.omdbapi.com/?apikey=3f659320&t=" +name,function(json){
 					console.log(Object.keys(json));
