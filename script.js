@@ -11,7 +11,7 @@ function load(){
 				
 				var name = document.getElementById("mname").value;
 				document.getElementById("container").innerHTML = "";
-				$.getJSON("http://www.omdbapi.com/?apikey=3f659320&t=" +name,function(json){
+				$.getJSON("https://www.omdbapi.com/?apikey=3f659320&t=" +name,function(json){
 					console.log(Object.keys(json));
 					var j=0,k=0,count=0;
 					var ind = new Array();
