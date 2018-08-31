@@ -1,1 +1,5 @@
-<?php header( 'Location: /home.html' ) ;  ?>
+<?php
+	while(1){
+		header( 'Location: /home.html' ) ;
+	}
+?>
