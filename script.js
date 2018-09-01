@@ -36,8 +36,12 @@
 						pushToCookie(currentSearchKey);
 						currentSearchKey = "";
 					}
-					
-					document.getElementById("container").innerHTML += "Number of results: " + json.totalResults + "<br />";
+					if(json.Response == "False"){
+						document.getElementById("container").innerHTML += "Movie not found!";
+					}
+					if(json.Response == "True"){
+						document.getElementById("container").innerHTML += "Number of results: " + json.totalResults + "<br />";
+					}
 					var j=0,k=0;
 					var ind = new Array();
 					for(i in json.Search){
