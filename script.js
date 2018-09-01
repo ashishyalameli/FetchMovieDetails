@@ -13,7 +13,7 @@ function load(){
 				var date = document.getElementById("date").value;
 				document.getElementById("mname").value = "";
 				document.getElementById("container").innerHTML = "";
-				$.getJSON("http://www.omdbapi.com/?apikey=3f659320&y=" +date+ "&s=" +name,function(json){
+				$.getJSON("https://www.omdbapi.com/?apikey=3f659320&y=" +date+ "&s=" +name,function(json){
 					console.log(Object.keys(json));
 					document.getElementById("container").innerHTML += "Number of results: " + json.totalResults + "<br />";
 					var j=0,k=0;
