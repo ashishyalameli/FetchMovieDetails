@@ -10,33 +10,32 @@ function load(){
 				document.getElementById("container").style.display = "block";
 				
 				var name = document.getElementById("mname").value;
+				var date = document.getElementById("date").value;
 				document.getElementById("mname").value = "";
 				document.getElementById("container").innerHTML = "";
-				$.getJSON("https://www.omdbapi.com/?apikey=3f659320&t=" +name,function(json){
+				$.getJSON("http://www.omdbapi.com/?apikey=3f659320&y=" +date+ "&s=" +name,function(json){
 					console.log(Object.keys(json));
-					var j=0,k=0,count=0;
+					document.getElementById("container").innerHTML += "Number of results: " + json.totalResults + "<br />";
+					var j=0,k=0;
 					var ind = new Array();
-					Object.keys(json).forEach(function(key){
-						ind[j] = key;
-						j += 1;
-					});
+					for(i in json.Search){
+						Object.keys(json.Search[i]).forEach(function(key){
+							ind[j] = key;
+							j += 1;
+						});
+					}
 					console.log(ind);
-					document.getElementById("container").innerHTML += "Poster: " + "<div><img src='" + json.Poster + "' alt='Not available!'></div><br />";
-					for(i in json){
-						count += 1;
-						for(;k<ind.length;){
+					json.Search.forEach(function(movie){
+						document.getElementById("container").innerHTML += "Poster: <div><img src='" + movie.Poster + "' alt='Not available!'></div><br />";
+						for(i in movie){
 							if(ind[k] == "Poster"){
 								document.getElementById("container").innerHTML += "";
-							} else if(ind[k] == "Ratings"){
-								document.getElementById("container").innerHTML += ind[k] + ": N/A<br />";
 							} else{
-								document.getElementById("container").innerHTML += ind[k] + ": " + json[i] + "<br />";
+								document.getElementById("container").innerHTML += ind[k] +": "+ movie[i] + "<br />";
 							}
 							k += 1;
-							if(count == k){
-								break;
-							}
 						}
-					}
+						document.getElementById("container").innerHTML += "<br /><hr><br />";
+					});
 				});
 			}
